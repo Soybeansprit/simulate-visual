@@ -1,0 +1,244 @@
+.main{
+    width: 100%;
+    height: 800px;
+    
+    
+}
+.left{
+    
+    width: 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.rule_ontology{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.right{
+    width: 60%;
+   position: relative;
+}
+
+.button{
+    margin-left: 20px;
+    
+    width:140px;
+    height: 50px;
+    border: solid #000 1px;
+    border-radius: 5px;
+}
+
+/* rules-ontology */
+.textarea{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width:95%;
+    height: 670px;
+    border: #36648B 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1em;
+}
+.chooseFile{
+    margin-left: 10px; 
+    margin-top: 5px;
+    padding: 2px;
+    width: 200px;
+    
+    border: solid,1px, #36648B;
+    background-color: #5fa3df;
+}
+.chooseFile_c{
+    background-color: #8bb7df;
+    margin-left: 10px; 
+    margin-top: 0px;
+    padding: 1px;
+    width: 200px;
+    
+}
+.submit_button{
+    margin-left: 40px;
+    margin-top: 10px;
+    width:100px;
+    height: 40px;
+    border: solid #000 1px;
+    border-radius: 5px;
+}
+
+
+
+label{
+    margin-left: 10px;
+    color: #36648B;
+}
+
+.my-code-editor .editor-container {
+     
+      height: calc(100vh - 100px);
+    
+  }
+
+  #input_textarea {
+    position: relative;
+    margin-left: 10px;
+    
+    height: 690px;
+    resize: none;
+    display: block;
+    border: 2px solid #36648B;
+    border-radius: 5px;
+  }
+
+
+  /* rule-ontology */
+
+
+
+
+.ifd_style{
+    width: 100%;
+    height: 700px;
+}
+
+.main_ontology_rules{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+h2{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.random-range{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border:  #36648B 2px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width:95%;
+    height: 670px;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.button-group{
+    height: 50px;
+    display: flex;
+}
+
+.scenes-scope{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.scrollbar{
+    
+    background-color:transparent;
+position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+scrollbar-face-color: #889B9F;
+scrollbar-shadow-color: #3D5054;
+scrollbar-highlight-color: #C3D6DA;
+scrollbar-3dlight-color: #3D5054;
+scrollbar-darkshadow-color: #85989C;
+scrollbar-track-color: #95A6AA;
+scrollbar-arrow-color: #FFD6DA;
+}
+
+.echarts_scale{
+    position: relative;
+    height:200%;
+    width: 200%;
+}
+
+.scenes_tree_scale{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.scenes_rules_scale{
+    position: relative;
+    height: 98%;
+    width: 100%;
+}
+.rules_scenes_scale{
+    position: relative;
+    height: 98%;
+    width: 100%;
+}
+
+
+.upload {
+    position: relative;
+  }
+  
+  .change {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width:140px;
+    height: 50px;
+  }
+  
+  .upload_button {
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 1px 6px;
+    color: rgb(12, 11, 11);
+    background: #e0e2e4;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    float: left;
+    font-size: 20px;
+    z-index: 5;
+  }
+
+  .analys_button{
+    margin-left: 20px;
+    
+    width:80px;
+    height: 50px;
+    border: solid #000 1px;
+    border-radius: 5px;
+  }
+
+  .simulation_time_input{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+  }
+
+  .simulation_time{
+      
+    margin-left: 20px;
+    width: 150px;
+  }
+
+
+  
+

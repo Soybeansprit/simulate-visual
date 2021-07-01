@@ -1,0 +1,67 @@
+<div class="main">
+
+    <div id="ontology_rules" class="main_ontology_rules">
+        <div class="left">
+            <div class="rule_ontology">
+                <div>
+                    <h2><b>Please Enter Trigger Action Programs:</b></h2>
+
+                    <textarea class="textarea"
+                        placeholder="Please enter 'IF...THEN...', such as 'IF temperature>30 THEN AirConditioner_0.turn_ac_cool '"
+                        [(ngModel)]="ruleText">
+                    </textarea>
+                    <div class="button-group">
+                        <!-- 上传环境本体 -->
+                        <button class="upload button">Upload Ontology
+                            <input class="change" type="file" ng2FileSelect [uploader]="modelUploader"
+                                (change)="uploadModelFile($event)" />
+                        </button>
+                        <!-- 上传location和deviceInformation的property文件 -->
+                        <button class="upload button">Upload Device Information
+                            <input class="change" type="file" ng2FileSelect [uploader]="propertyUploader"
+                                (change)="uploadPropertyFile($event)" />
+                        </button>
+
+                        <button class="analys_button" (click)="getBestScenarioAnalysis()">Simulation</button>
+                        <!-- <button class="analys_button" (click)="getStaticAnalysisResult()">Static Analysis</button>
+                        <button class="analys_button" (click)="generateAllSystemModels()">Generate Models</button>
+                        <button class="analys_button" (click)="scenariosSimulation()">Simulate</button> -->
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <!-- <app-rules-ontology class="rule_ontology"></app-rules-ontology> -->
+        </div>
+
+
+
+        <div class="right">
+            <div id="simulation">
+                <h2><b>Simulation Visualization:</b></h2>
+                <div class="random-range">
+                    
+
+
+                </div>
+                <div class="button-group">
+                    <button class="button" (click)="visualize()">Visualization</button>
+                    
+                    
+                    <div ng-view></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
+
+
+
+</div>
