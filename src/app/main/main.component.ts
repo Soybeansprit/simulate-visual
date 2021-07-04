@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 import { EnvironmentModel, StaticAnalysisResult } from '../class/scene';
 import { BestScenarioService } from '../service/best-scenario.service';
-import { DynamicAnalysisService } from '../service/dynamic-analysis.service';
-import { StaticAnalysisService } from '../service/static-analysis.service';
+import { DomSanitizer } from '@angular/platform-browser';  
 
 @Component({
   selector: 'app-main',
@@ -20,10 +19,12 @@ export class MainComponent implements OnInit {
   simulationTime: string = "300";
   simulationTimeFinal: string = "";
 
+  videoURL:string="";
+
   environmentModel:EnvironmentModel|null=null;
   staticAnalysisResult:StaticAnalysisResult|null=null;
 
-  address:string='http://localhost:8085/';
+  address:string='http://1.117.155.93:8085/';
   modelUploader: FileUploader = new FileUploader({
     url: this.address+'visual/upload',
     method: 'POST',
@@ -34,9 +35,10 @@ export class MainComponent implements OnInit {
     method: 'POST',
     itemAlias: 'file'
   });
-  constructor(private staticAnalysisService:StaticAnalysisService,private dynamicAnalysisService:DynamicAnalysisService,private bestScenarioService:BestScenarioService) { }
+  constructor(private bestScenarioService:BestScenarioService,private sanitizer:DomSanitizer) { }
 
   ngOnInit(): void {
+    document.getElementById("visualizationResult").style.display="none";
   }
 
   //////////////////////////////上传文件/////////////////////////////////
@@ -103,6 +105,7 @@ export class MainComponent implements OnInit {
     this.bestScenarioService.generateBestScenarioModelAndSimulate(this.ruleText,this.initModelFileName,this.propertyFileName,"300").subscribe(scene=>{
         
       console.log(scene)
+      alert("finished")
 
     })
   }
@@ -112,7 +115,14 @@ export class MainComponent implements OnInit {
   }
 
   visualize(){
+    this.bestScenarioService.getVisualizationResult(this.initModelFileName).subscribe(videoURL=>{
+      // this.videoURL=this.sanitizer.bypassSecurityTrustResourceUrl(videoURL[0]);
+      this.videoURL="assets/"+videoURL[0];
 
+      console.log(this.videoURL)
+      document.getElementById("visualizationResult").style.display="block";
+    })
+    
   }
 
 }
