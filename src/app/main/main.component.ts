@@ -3,6 +3,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { EnvironmentModel, StaticAnalysisResult } from '../class/scene';
 import { BestScenarioService } from '../service/best-scenario.service';
 import { DomSanitizer } from '@angular/platform-browser';  
+import * as $ from "jquery";
 
 
 /********加载RecordApp需要用到的支持文件*********/
@@ -221,9 +222,9 @@ export class MainComponent implements OnInit {
           recordBtn.textContent = "record";
           this.authorized=false;
 
-          let files = new window.File([blob],"audio.wav", {type: "wav"})
+          let file = new window.File([blob],"audio.wav", {type: "wav"})
 
-          console.log(files)
+          // console.log(file)
           // this.audioURL=window.URL.createObjectURL(blob)
           //已经拿到blob文件对象想干嘛就干嘛：立即播放、上传
 
@@ -238,21 +239,34 @@ export class MainComponent implements OnInit {
           
           // this.upload(this.audioUploader,files.name)
 
-          let formData = new FormData()
-          formData.append('file',blob,'audio.wav');
-          console.log(formData)
 
+
+          var fd = new FormData();
+          fd.append('fname', 'audio.wav');
+          fd.append('file', file);
+          console.log(fd.get('fname'))
+          console.log(fd.get('file'))
           $.ajax({
-              url: '/visual/upload',
               type: 'POST',
+              url: 'http://localhost:8085/visual/upload',
+              data: fd,
               processData: false,
-              contentType: false,
-              cache: false,
-              data: formData,
-              success(res) {
-                  console.log("上传完成!")
-              }
-          })
+              contentType: false
+          }).done(function(data) {
+                console.log(data);
+          });
+
+          // $.ajax({
+          //     url: '/visual/upload',
+          //     type: 'POST',
+          //     processData: false,
+          //     contentType: false,
+          //     cache: false,
+          //     data: formData,
+          //     success(res) {
+          //         console.log("上传完成!")
+          //     }
+          // })
 
 
 

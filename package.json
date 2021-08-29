@@ -21,6 +21,7 @@
     "@angular/router": "~11.0.9",
     "@types/dom-mediacapture-record": "^1.0.10",
     "@videogular/ngx-videogular": "^4.0.0",
+    "jquery": "^3.6.0",
     "js-audio-recorder": "^1.0.7",
     "ng2-file-upload": "^1.4.0",
     "recorder-core": "^1.1.21080800",
