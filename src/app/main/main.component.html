@@ -12,15 +12,18 @@
                     </textarea>
                     <div class="button-group">
                         <!-- 上传环境本体 -->
-                        <button class="upload button">Upload Ontology
+                        <!-- <button class="upload button">Upload Ontology
                             <input class="change" type="file" ng2FileSelect [uploader]="modelUploader"
                                 (change)="uploadModelFile($event)" />
-                        </button>
+                        </button> -->
                         <!-- 上传location和deviceInformation的property文件 -->
-                        <button class="upload button">Upload Device Information
+                        <!-- <button class="upload button">Upload Device Information
                             <input class="change" type="file" ng2FileSelect [uploader]="propertyUploader"
                                 (change)="uploadPropertyFile($event)" />
-                        </button>
+                        </button> -->
+                        <button class="auth-btn" id="auth" (click)="authorize()">authorize</button>
+                        <button class="record-btn" id="record_btn" (click)="recordAudio()">record</button>
+                        <audio controls class="audio-player" id="play_btn" src="{{audioURL}}"></audio>
 
                         <button class="analys_button" (click)="getBestScenarioAnalysis()">Simulation</button>
                         <!-- <button class="analys_button" (click)="getStaticAnalysisResult()">Static Analysis</button>

@@ -13,7 +13,7 @@ export class BestScenarioService {
   httpOptions = {
   	headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  address:string="http://1.117.155.93:8085/";
+  address:string="http://localhost:8085/";
 
   
   generateBestScenarioModelAndSimulate(ruleText:string,initModelFileName:string,propertyFileName:string,simulationTime:String):Observable<Scene>{
@@ -34,7 +34,7 @@ export class BestScenarioService {
       ruleTextLines=ruleText.split("\n");
     }
     
-    var url=this.address+`visual/generateBestScenarioModelAndSimulate?initModelFileName=${initModelFileName}&propertyFileName=${propertyFileName}&simulationTime=${simulationTime}`;
+    var url=this.address+`visual/generateBestScenarioModelAndSimulate?`;
     return this.http.post<Scene>(url,ruleTextLines,this.httpOptions);
   }
 
